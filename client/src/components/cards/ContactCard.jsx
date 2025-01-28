@@ -20,8 +20,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
   @media (max-width: 600px) {
     padding: 24px 28px;
+    max-width: 90%; /* Adjust card width on small screens */
   }
 `;
 
@@ -29,6 +31,12 @@ const Header = styled.div`
   display: flex;
   gap: 24px; /* gap between image and name */
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start; /* Stack image and text vertically */
+    gap: 16px; /* reduce gap on small screens */
+  }
 `;
 
 const Image = styled.img`
@@ -36,18 +44,31 @@ const Image = styled.img`
   height: 160px;
   border-radius: 25%;
   object-fit: cover;
+
+  @media (max-width: 600px) {
+    width: 120px; /* smaller image on mobile */
+    height: 120px;
+  }
 `;
 
 const Name = styled.div`
-  font-size: 28px; 
+  font-size: 28px;
   color: ${({ theme }) => theme.text_primary};
   font-weight: 700;
+
+  @media (max-width: 600px) {
+    font-size: 24px; /* smaller font size on mobile */
+  }
 `;
 
 const Title = styled.div`
-  font-size: 18px; 
+  font-size: 18px;
   color: #804040;
   font-weight: 600;
+
+  @media (max-width: 600px) {
+    font-size: 16px; /* smaller font size on mobile */
+  }
 `;
 
 const Details = styled.div`
@@ -55,13 +76,18 @@ const Details = styled.div`
   color: ${({ theme }) => theme.text_primary};
   font-weight: 600;
   display: flex;
-  gap: 16px; 
+  gap: 16px;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column; /* Stack details vertically on mobile */
+    gap: 12px;
+  }
 `;
 
 const Box = styled.div`
   display: flex;
-  gap: 12px; 
+  gap: 12px;
   align-items: center;
   padding: 8px 16px;
   border: 1px solid ${({ theme }) => theme.text_primary + 20};
@@ -72,6 +98,11 @@ const Row = styled.div`
   display: flex;
   gap: 16px;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column; /* Stack the links vertically on mobile */
+    gap: 12px;
+  }
 `;
 
 const ContactCard = ({ contact }) => {
