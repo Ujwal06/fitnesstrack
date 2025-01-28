@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://fitnesstracking-nbwl.onrender.com/api/",
+  baseURL: "https://fitnesstrack-hhit.onrender.com/api/",
 });
 
 export const UserSignUp = async (data) => API.post("/user/signup", data);
